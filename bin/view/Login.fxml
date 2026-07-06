@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" styleClass="login-shell" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+    <children>
+        <VBox alignment="CENTER" maxWidth="420" spacing="16" styleClass="login-card">
+            <children>
+                <Label fx:id="titleLabel" styleClass="login-title" text="LOGIN" />
+                <Label styleClass="login-subtitle" text="Selamat datang di BarberPro" />
+                <Button fx:id="loginButton" onAction="#handleLogin" styleClass="primary-button" text="Masuk" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

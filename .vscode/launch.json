@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "Main",
+        "projectName": "BarberNgawi_9d4f2838"
+    },
+    {
+        "name": "Run BarberPro",
+        "type": "java",
+        "request": "launch",
+        "mainClass": "Main",
+        "projectName": "BarberNgawi",
+        "cwd": "${workspaceFolder}",
+        "vmArgs": [
+            "--module-path",
+            "C:\\Program Files\\Java\\jdk-9.0.4\\jmods",
+            "--add-modules",
+            "javafx.controls,javafx.fxml"
+        ]
+    }
+]
+}

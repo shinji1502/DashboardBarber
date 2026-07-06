@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox styleClass="app-shell" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+    <children>
+        <VBox styleClass="sidebar">
+            <children>
+                <Label styleClass="brand" text="BarberPro" />
+                <Button fx:id="dashboardButton" onAction="#showDashboard" styleClass="menu-button" text="◉ Dashboard" />
+                <Button fx:id="pelangganButton" onAction="#showPelanggan" styleClass="menu-button" text="◈ Pelanggan" />
+                <Button fx:id="laporanButton" onAction="#showLaporan" styleClass="menu-button" text="◌ Laporan" />
+                <Button fx:id="pengaturanButton" onAction="#showPengaturan" styleClass="menu-button" text="⚙ Pengaturan" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Button onAction="#goToLogin" styleClass="menu-button" text="⇠ Keluar" />
+            </children>
+        </VBox>
+        <VBox styleClass="content-area" HBox.hgrow="ALWAYS">
+            <children>
+                <HBox styleClass="top-bar">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label fx:id="titleLabel" styleClass="page-title" text="Dashboard" />
+                                <Label styleClass="page-subtitle" text="Selamat datang kembali, Admin" />
+                            </children>
+                        </VBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Button styleClass="icon-button" text="🔔" />
+                                <Button styleClass="profile-pill" text="👤 Admin" />
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label fx:id="dateLabel" styleClass="date-label" text="30 Juni 2026" />
+                <HBox styleClass="stats-row">
+                    <children>
+                        <VBox styleClass="stat-card" prefWidth="260">
+                            <children>
+                                <Label styleClass="card-label" text="Pendapatan Hari Ini" />
+                                <Label fx:id="incomeValueLabel" styleClass="stat-value" text="Rp0" />
+                                <Label styleClass="stat-trend positive" text="+12% dari kemarin" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-card" prefWidth="260">
+                            <children>
+                                <Label styleClass="card-label" text="Total Pelanggan Hari Ini" />
+                                <Label fx:id="customerCountLabel" styleClass="stat-value" text="0 Pelanggan" />
+                                <Label styleClass="stat-trend positive" text="+3 dari kemarin" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox styleClass="chart-card">
+                    <children>
+                        <Label styleClass="section-title" text="Pendapatan Mingguan" />
+                        <BarChart fx:id="weeklyChart" prefHeight="260" legendVisible="false">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </BarChart>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>

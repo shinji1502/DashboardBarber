@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox styleClass="app-shell" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaporanController">
+    <children>
+        <VBox styleClass="sidebar">
+            <children>
+                <Label styleClass="brand" text="BarberPro" />
+                <Button onAction="#showDashboard" styleClass="menu-button" text="◉ Dashboard" />
+                <Button onAction="#showPelanggan" styleClass="menu-button" text="◈ Pelanggan" />
+                <Button fx:id="laporanNavButton" onAction="#showLaporan" styleClass="menu-button" text="◌ Laporan" />
+                <Button onAction="#showPengaturan" styleClass="menu-button" text="⚙ Pengaturan" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Button onAction="#goToLogin" styleClass="menu-button" text="⇠ Keluar" />
+            </children>
+        </VBox>
+        <VBox styleClass="content-area" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="titleLabel" styleClass="page-title" text="Laporan" />
+                <Label styleClass="page-subtitle" text="Ringkasan pendapatan BarberPro" />
+                <VBox styleClass="chart-card">
+                    <children>
+                        <Label styleClass="section-title" text="Pendapatan Mingguan" />
+                        <LineChart fx:id="reportChart" prefHeight="240" legendVisible="false">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+                <HBox styleClass="stats-row">
+                    <children>
+                        <VBox styleClass="stat-card" prefWidth="220">
+                            <children>
+                                <Label styleClass="card-label" text="Pendapatan Harian" />
+                                <Label fx:id="dailyIncomeLabel" styleClass="stat-value" text="Rp0" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-card" prefWidth="220">
+                            <children>
+                                <Label styleClass="card-label" text="Pendapatan Mingguan" />
+                                <Label fx:id="weeklyIncomeLabel" styleClass="stat-value" text="Rp0" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-card" prefWidth="220">
+                            <children>
+                                <Label styleClass="card-label" text="Pendapatan Bulanan" />
+                                <Label fx:id="monthlyIncomeLabel" styleClass="stat-value" text="Rp0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>

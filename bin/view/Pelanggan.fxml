@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox styleClass="app-shell" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PelangganController">
+    <children>
+        <VBox styleClass="sidebar">
+            <children>
+                <Label styleClass="brand" text="BarberPro" />
+                <Button onAction="#showDashboard" styleClass="menu-button" text="◉ Dashboard" />
+                <Button fx:id="pelangganNavButton" onAction="#showPelanggan" styleClass="menu-button,active" text="◈ Pelanggan" />
+                <Button onAction="#showLaporan" styleClass="menu-button" text="◌ Laporan" />
+                <Button onAction="#showPengaturan" styleClass="menu-button" text="⚙ Pengaturan" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Button onAction="#goToLogin" styleClass="menu-button" text="⇠ Keluar" />
+            </children>
+        </VBox>
+        <VBox styleClass="content-area" HBox.hgrow="ALWAYS">
+            <children>
+                <HBox styleClass="top-bar">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label fx:id="titleLabel" styleClass="page-title" text="Data Pelanggan" />
+                                <Label styleClass="page-subtitle" text="Kelola pelanggan BarberPro" />
+                            </children>
+                        </VBox>
+                        <HBox styleClass="toolbar">
+                            <children>
+                                <TextField fx:id="searchField" promptText="Cari pelanggan" styleClass="text-field" />
+                                <Button fx:id="addButton" onAction="#showAddDialog" styleClass="primary-button" text="Tambah Pelanggan" />
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <TableView fx:id="customerTable" styleClass="data-table" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" />
+                        <TableColumn fx:id="namaColumn" text="Nama" />
+                        <TableColumn fx:id="teleponColumn" text="Nomor Telepon" />
+                        <TableColumn fx:id="tanggalColumn" text="Tanggal" />
+                        <TableColumn fx:id="layananColumn" text="Layanan" />
+                        <TableColumn fx:id="hargaColumn" text="Harga" />
+                        <TableColumn fx:id="aksiColumn" text="Aksi" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</HBox>
